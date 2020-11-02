@@ -1,0 +1,32 @@
+.counter{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  &__size,
+  &__value{
+    border: 0.0694rem solid #000000;
+    font-size: 3.4722rem;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  &__size{
+    align-self: flex-start;
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    width: 10.5rem;
+  }
+
+  &__result{
+    font-size: 3.4722rem;
+    margin-top: 3rem;
+  }
+}
