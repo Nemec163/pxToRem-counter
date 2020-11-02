@@ -1,8 +1,10 @@
 import './style.scss';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default () => {
+  const input = useRef();
+
   const [result, handleResult] = useState(0);
   const [size, handleSize] = useState(14.4);
   const CL = 'counter';
@@ -22,9 +24,9 @@ export default () => {
   }
   
   return (
-    <div className={CL}>
+    <div className={CL} onClick={() => { input.current.select(); }}>
       <input className={`${CL}__size`} placeholder='layout width' defaultValue={1440} onChange={handleCustomSize} type="text"/>
-      <input className={`${CL}__value`} placeholder='value in px' onChange={handleInput} type="number"/>
+      <input ref={input} className={`${CL}__value`} placeholder='value in px' onChange={handleInput} type="number"/>
       <div className={`${CL}__result`}>{`${result}rem`}</div>
     </div>
   );
